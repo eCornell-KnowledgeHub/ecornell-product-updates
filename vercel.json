@@ -1,4 +1,4 @@
-json{
+{
   "rewrites": [
     { "source": "/march-30-2026", "destination": "/march-30-2026/index.html" },
     { "source": "/may-11-2026", "destination": "/may-11-2026/index.html" }
