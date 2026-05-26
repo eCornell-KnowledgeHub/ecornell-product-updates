@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's new at eCornell? — May 26, 2026</title>
+    <meta name="description" content="eCornell Product Management Update covering Q4 FY26 releases, AI Workshops, pricing, the AI On-Demand Lessons Library, and upcoming Symposia.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --carnelian-red: #B31B1B;
+            --carnelian-red-dark: #8B1314;
+            --carnelian-red-light: #C73E3E;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #E5E5E5;
+            --gray-300: #D4D4D4;
+            --gray-400: #A3A3A3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --font-primary: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            --font-serif: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            --container-max: 1200px;
+            --container-padding: 2rem;
+            --transition-base: 0.25s ease-out;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-base: 0 2px 4px 0 rgba(0,0,0,0.1);
+            --shadow-lg: 0 4px 8px 0 rgba(0,0,0,0.12);
+            --radius-sm: 0.25rem;
+            --radius-base: 0.5rem;
+            --radius-lg: 0.75rem;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: var(--font-primary); font-size: 1rem; line-height: 1.6; color: var(--gray-700); background-color: var(--white); overflow-x: hidden; }
+
+        h1,h2,h3,h4,h5,h6 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2; color: var(--gray-800); margin-bottom: var(--space-md); }
+        h1 { font-size: clamp(2.5rem, 5vw, 3.75rem); }
+        h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
+        h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+        h4 { font-size: 1.125rem; }
+        p { margin-bottom: var(--space-md); color: var(--gray-600); }
+        a { color: var(--carnelian-red); text-decoration: none; transition: all var(--transition-base); }
+        a:hover { color: var(--carnelian-red-dark); }
+        .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); }
+
+        /* ── Navigation ─────────────────────────────────── */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--gray-200); transition: all var(--transition-base); }
+        .nav.scrolled { background: rgba(255,255,255,0.98); box-shadow: var(--shadow-base); }
+        .nav-container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-padding); display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .nav-logo { display: flex; align-items: center; gap: var(--space-md); }
+        .ecornell-logo { height: 32px; width: auto; transition: all var(--transition-base); }
+        .ecornell-logo:hover { transform: translateY(-1px); filter: brightness(1.1); }
+        .nav-divider { height: 20px; width: 1px; background: var(--gray-300); }
+        .nav-context { font-size: 0.875rem; color: var(--gray-500); font-weight: 500; letter-spacing: 0.02em; }
+        .nav-menu { display: flex; align-items: center; gap: var(--space-sm); }
+        .nav-link { font-weight: 500; color: var(--gray-700); padding: var(--space-xs) 0.75rem; border-radius: var(--radius-base); transition: all var(--transition-base); font-size: 0.875rem; }
+        .nav-link:hover, .nav-link.active { color: var(--carnelian-red); background-color: var(--gray-50); }
+
+        /* ── Hero ────────────────────────────────────────── */
+        .hero { position: relative; min-height: 92vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 50%, var(--gray-100) 100%); padding-top: 80px; }
+        .hero-background { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%, rgba(179,27,27,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(179,27,27,0.04) 0%, transparent 50%); }
+        .hero-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 300px; height: 300px; opacity: 0.04; z-index: 1; pointer-events: none; }
+        .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(179,27,27,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(179,27,27,0.04) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%); }
+        .hero-content { text-align: center; max-width: 880px; padding: var(--space-2xl) var(--space-lg); position: relative; z-index: 2; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: var(--space-xs); padding: 0.5rem 1rem; background: var(--white); border: 1px solid var(--gray-200); border-radius: 100px; font-size: 0.8125rem; font-weight: 600; color: var(--carnelian-red); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-lg); box-shadow: var(--shadow-sm); animation: fadeIn 0.8s ease-out backwards; }
+        .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--carnelian-red); animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(1.3); } }
+        .hero-title { margin-bottom: var(--space-lg); font-family: var(--font-serif); }
+        .title-line { display: block; animation: slideInUp 1s ease-out backwards; }
+        .title-line:nth-child(1) { animation-delay: 0.15s; }
+        .title-line:nth-child(2) { animation-delay: 0.3s; }
+        .title-line.accent { color: var(--carnelian-red); font-style: italic; }
+        @keyframes slideInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+        .hero-subtitle { font-size: 1.1875rem; color: var(--gray-600); margin-bottom: var(--space-2xl); animation: fadeIn 1s ease-out 0.5s backwards; max-width: 720px; margin-left: auto; margin-right: auto; }
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); margin-bottom: var(--space-2xl); animation: fadeIn 1s ease-out 0.7s backwards; max-width: 760px; margin-left: auto; margin-right: auto; }
+        .stat { text-align: center; }
+        .stat-number { display: block; font-family: var(--font-serif); font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 700; color: var(--carnelian-red); line-height: 1; margin-bottom: var(--space-xs); }
+        .stat-label { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+        .hero-actions { display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; animation: fadeIn 1s ease-out 0.9s backwards; }
+
+        /* ── Buttons ─────────────────────────────────────── */
+        .btn { display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-md) var(--space-xl); border-radius: var(--radius-base); font-weight: 600; text-decoration: none; transition: all var(--transition-base); cursor: pointer; border: 2px solid transparent; font-size: 0.9375rem; line-height: 1; font-family: var(--font-primary); }
+        .btn-primary { background: var(--carnelian-red); color: var(--white); border-color: var(--carnelian-red); }
+        .btn-primary:hover { background: var(--carnelian-red-dark); border-color: var(--carnelian-red-dark); color: var(--white); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+        .btn-secondary { background: transparent; color: var(--carnelian-red); border-color: var(--carnelian-red); }
+        .btn-secondary:hover { background: var(--carnelian-red); color: var(--white); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+
+        /* ── Sections ────────────────────────────────────── */
+        .section { padding: var(--space-3xl) 0; position: relative; }
+        .section-alt { background-color: var(--gray-50); }
+        .section-header { text-align: center; margin-bottom: var(--space-2xl); max-width: 760px; margin-left: auto; margin-right: auto; }
+        .section-number { display: inline-block; font-family: var(--font-serif); font-size: 0.9375rem; font-weight: 600; color: var(--carnelian-red); margin-bottom: var(--space-sm); letter-spacing: 0.05em; }
+        .section-number::before { content: "— "; }
+        .section-number::after { content: " —"; }
+        .section-title { margin-bottom: var(--space-md); }
+        .section-subtitle { font-size: 1.0625rem; color: var(--gray-600); max-width: 640px; margin: 0 auto; }
+
+        /* ── Library ─────────────────────────────────────── */
+        .library-feature { max-width: 1060px; margin: 0 auto; }
+        .library-hero { background: linear-gradient(135deg, #1a1a1a 0%, #2a1010 100%); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-2xl); text-align: center; margin-bottom: var(--space-xl); position: relative; overflow: hidden; }
+        .library-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 30% 20%, rgba(179,27,27,0.25) 0%, transparent 40%), radial-gradient(circle at 70% 80%, rgba(179,27,27,0.15) 0%, transparent 40%); }
+        .library-hero-content { position: relative; z-index: 2; }
+        .library-hero .library-eyebrow { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--carnelian-red-light); font-weight: 700; margin-bottom: var(--space-sm); }
+        .library-hero h3 { color: var(--white); font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: var(--space-sm); }
+        .library-hero p { color: rgba(255,255,255,0.8); font-size: 1.0625rem; max-width: 560px; margin: 0 auto var(--space-xl); }
+        .library-counter { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--space-lg); max-width: 720px; margin: 0 auto; }
+        .library-counter-item { text-align: center; }
+        .library-counter-num { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; color: var(--white); line-height: 1; }
+        .library-counter-plus { font-family: var(--font-serif); font-size: 2rem; color: var(--carnelian-red-light); font-weight: 300; }
+        .library-counter-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.7); font-weight: 600; margin-top: var(--space-xs); }
+        .library-counter-total { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid rgba(255,255,255,0.15); color: var(--white); font-family: var(--font-serif); font-size: 1.125rem; font-style: italic; }
+        .library-counter-total strong { color: var(--carnelian-red-light); font-weight: 700; font-style: normal; }
+        .library-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); }
+        .library-col { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); }
+        .library-col-header { padding-bottom: var(--space-md); border-bottom: 2px solid var(--gray-100); margin-bottom: var(--space-md); }
+        .library-col-count { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--carnelian-red); line-height: 1; }
+        .library-col-title { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 600; color: var(--gray-800); margin-top: 4px; }
+        .library-col-sub { font-size: 0.8125rem; color: var(--gray-500); margin-top: 4px; }
+        .library-cert-group { margin-bottom: var(--space-md); }
+        .library-cert-group:last-child { margin-bottom: 0; }
+        .library-cert-label { font-size: 0.75rem; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-xs); }
+        .library-cert-list { display: flex; flex-wrap: wrap; gap: 6px; }
+        .library-cert-pill { padding: 4px 10px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 100px; font-size: 0.8125rem; color: var(--gray-700); font-weight: 500; }
+        .library-new-banner { margin-top: var(--space-lg); padding: var(--space-md); background: rgba(179,27,27,0.05); border: 1px solid rgba(179,27,27,0.2); border-radius: var(--radius-base); }
+        .library-new-banner-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--carnelian-red); margin-bottom: var(--space-xs); }
+
+        /* ── Workshops ───────────────────────────────────── */
+        .workshop-intro { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); align-items: center; }
+        .workshop-intro-copy h2 { margin-bottom: var(--space-lg); }
+        .workshop-intro-copy .lead { font-size: 1.125rem; color: var(--gray-700); font-family: var(--font-serif); font-style: italic; border-left: 3px solid var(--carnelian-red); padding-left: var(--space-md); margin-bottom: var(--space-lg); }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+        .feature-card { background: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-base); border: 1px solid var(--gray-200); transition: all var(--transition-base); }
+        .feature-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--carnelian-red); }
+        .feature-icon { width: 44px; height: 44px; background: rgba(179,27,27,0.08); color: var(--carnelian-red); border-radius: var(--radius-base); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-md); }
+        .feature-icon svg { width: 22px; height: 22px; }
+        .feature-card h4 { color: var(--gray-800); margin-bottom: var(--space-xs); font-family: var(--font-serif); }
+        .feature-card p { font-size: 0.9375rem; margin-bottom: 0; color: var(--gray-600); }
+
+        /* ── Pricing ─────────────────────────────────────── */
+        .pricing-wrap { max-width: 960px; margin: 0 auto; }
+        .pricing-note { text-align: center; font-style: italic; color: var(--gray-600); margin-bottom: var(--space-xl); font-family: var(--font-serif); font-size: 1.0625rem; }
+        .pricing-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: var(--space-md); background: var(--white); padding: var(--space-lg); border-radius: var(--radius-lg); box-shadow: var(--shadow-base); border: 1px solid var(--gray-200); }
+        .pricing-header { padding: var(--space-md); text-align: center; border-radius: var(--radius-base); font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; }
+        .pricing-header.retail { background: var(--carnelian-red); color: var(--white); }
+        .pricing-header.enterprise { background: var(--gray-800); color: var(--white); }
+        .pricing-row { display: contents; }
+        .pricing-label { padding: var(--space-md); border-top: 1px solid var(--gray-200); font-weight: 600; color: var(--gray-800); display: flex; flex-direction: column; justify-content: center; }
+        .pricing-label-sub { font-weight: 400; font-size: 0.8125rem; color: var(--gray-500); margin-top: 2px; }
+        .pricing-value { padding: var(--space-md); border-top: 1px solid var(--gray-200); text-align: center; font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--gray-800); display: flex; align-items: center; justify-content: center; }
+        .pricing-value.accent { color: var(--carnelian-red); }
+        .pricing-footnote { margin-top: var(--space-md); text-align: center; font-size: 0.8125rem; color: var(--gray-500); font-style: italic; }
+
+        /* ── Calendar ────────────────────────────────────── */
+        .calendar-wrap { max-width: 1060px; margin: 0 auto; }
+        .calendar-controls { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-md); margin-bottom: var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); box-shadow: var(--shadow-sm); }
+        .search-box { flex: 1; min-width: 220px; position: relative; }
+        .search-box svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--gray-400); }
+        .search-box input { width: 100%; padding: 0.625rem 0.75rem 0.625rem 2.25rem; border: 1px solid var(--gray-200); border-radius: var(--radius-base); font-family: var(--font-primary); font-size: 0.9375rem; color: var(--gray-800); background: var(--gray-50); transition: all var(--transition-base); }
+        .search-box input:focus { outline: none; border-color: var(--carnelian-red); background: var(--white); box-shadow: 0 0 0 3px rgba(179,27,27,0.1); }
+        .filter-group { display: flex; gap: 0.375rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.5rem 0.875rem; border: 1px solid var(--gray-200); background: var(--white); border-radius: var(--radius-base); font-family: var(--font-primary); font-size: 0.8125rem; font-weight: 600; color: var(--gray-600); cursor: pointer; transition: all var(--transition-base); }
+        .filter-btn:hover { border-color: var(--carnelian-red); color: var(--carnelian-red); }
+        .filter-btn.active { background: var(--carnelian-red); border-color: var(--carnelian-red); color: var(--white); }
+        .workshop-list { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+        .workshop-row { display: grid; grid-template-columns: 2fr 1fr 1fr 0.7fr; gap: var(--space-md); padding: var(--space-md) var(--space-lg); align-items: center; border-bottom: 1px solid var(--gray-100); transition: background var(--transition-base); }
+        .workshop-row:last-child { border-bottom: none; }
+        .workshop-row:hover { background: var(--gray-50); }
+        .workshop-row.header { background: var(--gray-50); font-size: 0.75rem; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.06em; padding-top: var(--space-sm); padding-bottom: var(--space-sm); }
+        .workshop-title { font-weight: 600; color: var(--gray-800); font-size: 0.9375rem; line-height: 1.4; }
+        .workshop-faculty { color: var(--gray-700); font-size: 0.875rem; }
+        .workshop-date { color: var(--gray-700); font-size: 0.875rem; font-variant-numeric: tabular-nums; }
+        .workshop-date .month { display: inline-block; padding: 2px 6px; background: rgba(179,27,27,0.08); color: var(--carnelian-red); border-radius: var(--radius-sm); font-weight: 700; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 6px; min-width: 34px; text-align: center; }
+        .workshop-time { color: var(--gray-500); font-size: 0.8125rem; font-variant-numeric: tabular-nums; }
+        .workshop-empty { text-align: center; padding: var(--space-xl); color: var(--gray-500); font-style: italic; }
+        .calendar-footer { margin-top: var(--space-md); text-align: center; font-size: 0.875rem; color: var(--gray-500); }
+        .calendar-footer strong { color: var(--gray-700); }
+
+        /* ── Releases ────────────────────────────────────── */
+        .release-hero { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-2xl); }
+        .quarter-card { background: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); border: 1px solid var(--gray-200); box-shadow: var(--shadow-base); position: relative; overflow: hidden; transition: all var(--transition-base); }
+        .quarter-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+        .quarter-card.current { background: linear-gradient(135deg, var(--carnelian-red) 0%, var(--carnelian-red-dark) 100%); color: var(--white); border-color: var(--carnelian-red); }
+        .quarter-card.current h3, .quarter-card.current .quarter-label, .quarter-card.current .quarter-stat-num { color: var(--white); }
+        .quarter-card.current p, .quarter-card.current .quarter-stat-label { color: rgba(255,255,255,0.85); }
+        .quarter-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--carnelian-red); margin-bottom: var(--space-xs); }
+        .quarter-card h3 { font-size: 1.5rem; margin-bottom: var(--space-xs); }
+        .quarter-card p { font-size: 0.9375rem; margin-bottom: var(--space-lg); }
+        .quarter-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--gray-200); }
+        .quarter-card.current .quarter-stats { border-top-color: rgba(255,255,255,0.2); }
+        .quarter-stat-num { font-family: var(--font-serif); font-size: 1.875rem; font-weight: 700; color: var(--carnelian-red); line-height: 1; }
+        .quarter-stat-label { font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); font-weight: 600; margin-top: 4px; }
+        .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--gray-200); margin-bottom: var(--space-xl); overflow-x: auto; }
+        .tab-btn { padding: var(--space-md) var(--space-lg); background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; font-family: var(--font-primary); font-size: 0.9375rem; font-weight: 600; color: var(--gray-500); cursor: pointer; transition: all var(--transition-base); white-space: nowrap; }
+        .tab-btn:hover { color: var(--gray-800); }
+        .tab-btn.active { color: var(--carnelian-red); border-bottom-color: var(--carnelian-red); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; animation: fadeIn 0.4s ease-out; }
+        .release-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+        .release-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); transition: all var(--transition-base); }
+        .release-card:hover { border-color: var(--carnelian-red); box-shadow: var(--shadow-base); }
+        .release-card h4 { display: flex; align-items: center; gap: var(--space-xs); margin-bottom: var(--space-md); font-family: var(--font-serif); color: var(--gray-800); font-size: 1.125rem; flex-wrap: wrap; }
+        .badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 100px; font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-family: var(--font-primary); white-space: nowrap; }
+        .badge-new { background: rgba(179,27,27,0.1); color: var(--carnelian-red); }
+        .badge-update { background: rgba(37,99,235,0.1); color: #1e40af; }
+        .badge-retire { background: rgba(100,116,139,0.12); color: var(--gray-600); }
+        .release-card ul { list-style: none; padding: 0; }
+        .release-card li { padding: 0.5rem 0; padding-left: 1.25rem; position: relative; color: var(--gray-700); font-size: 0.9375rem; border-bottom: 1px solid var(--gray-100); }
+        .release-card li:last-child { border-bottom: none; }
+        .release-card li::before { content: ""; position: absolute; left: 0; top: 1rem; width: 6px; height: 6px; border-radius: 50%; background: var(--carnelian-red); }
+        .release-card li small { display: block; color: var(--gray-500); font-size: 0.8125rem; margin-top: 2px; }
+        .release-card-full { grid-column: 1 / -1; }
+
+        /* ── Symposia ─────────────────────────────────────── */
+        .symposia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+        .symposium-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); transition: all var(--transition-base); position: relative; overflow: hidden; }
+        .symposium-card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--carnelian-red); }
+        .symposium-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--carnelian-red); }
+        .symposium-date-badge { display: inline-flex; align-items: center; padding: 4px 10px; background: rgba(179,27,27,0.08); border-radius: 100px; font-size: 0.75rem; font-weight: 700; color: var(--carnelian-red); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-sm); }
+        .symposium-card h4 { color: var(--gray-800); font-family: var(--font-serif); font-size: 1.0625rem; margin-bottom: var(--space-xs); }
+        .symposium-faculty { font-size: 0.875rem; color: var(--carnelian-red); font-weight: 600; margin-bottom: var(--space-xs); }
+        .symposium-session { font-size: 0.875rem; color: var(--gray-600); font-style: italic; margin-bottom: 0; }
+        .symposia-note { text-align: center; margin-top: var(--space-lg); font-size: 0.875rem; color: var(--gray-500); font-style: italic; padding: var(--space-md); background: var(--gray-50); border-radius: var(--radius-base); }
+
+        /* ── Open Live Programs ───────────────────────────── */
+        .programs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+        .program-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-xl); transition: all var(--transition-base); }
+        .program-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--carnelian-red); }
+        .program-card.featured { border-top: 3px solid var(--carnelian-red); }
+        .program-card h4 { color: var(--gray-800); font-family: var(--font-serif); margin-bottom: var(--space-sm); }
+        .program-meta { display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--space-md); }
+        .program-meta-row { display: flex; gap: var(--space-sm); font-size: 0.875rem; }
+        .program-meta-label { font-weight: 700; color: var(--gray-700); min-width: 70px; }
+        .program-meta-value { color: var(--gray-600); }
+        .program-tag { display: inline-flex; padding: 2px 10px; background: rgba(179,27,27,0.08); border-radius: 100px; font-size: 0.75rem; font-weight: 700; color: var(--carnelian-red); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: var(--space-sm); }
+        .program-tag.capacity { background: rgba(234,88,12,0.1); color: #c2410c; }
+        .program-note { font-size: 0.875rem; color: var(--gray-500); font-style: italic; margin-bottom: 0; padding-top: var(--space-sm); border-top: 1px solid var(--gray-100); margin-top: var(--space-sm); }
+
+        /* ── Mentored Learning ───────────────────────────── */
+        .ml-table-wrap { overflow-x: auto; }
+        .ml-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-base); border: 1px solid var(--gray-200); }
+        .ml-table th { background: var(--gray-800); color: var(--white); padding: var(--space-md) var(--space-lg); text-align: left; font-family: var(--font-serif); font-size: 0.9375rem; font-weight: 600; }
+        .ml-table th:first-child { background: var(--carnelian-red); }
+        .ml-table td { padding: var(--space-md) var(--space-lg); border-bottom: 1px solid var(--gray-100); font-size: 0.9375rem; color: var(--gray-700); vertical-align: top; }
+        .ml-table tr:last-child td { border-bottom: none; }
+        .ml-table tr:hover td { background: var(--gray-50); }
+        .ml-table td:first-child { font-weight: 600; color: var(--gray-800); background: var(--gray-50); }
+
+        /* ── CTA ─────────────────────────────────────────── */
+        .cta-section { padding: var(--space-3xl) 0; background: linear-gradient(135deg, var(--carnelian-red) 0%, var(--carnelian-red-dark) 100%); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+        .cta-section::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 40%); }
+        .cta-content { position: relative; z-index: 2; }
+        .cta-content h2 { color: var(--white); margin-bottom: var(--space-md); }
+        .cta-content p { font-size: 1.0625rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto var(--space-xl); }
+        .cta-section .btn-primary { background: var(--white); color: var(--carnelian-red); border-color: var(--white); }
+        .cta-section .btn-primary:hover { background: var(--gray-100); border-color: var(--gray-100); color: var(--carnelian-red); }
+        .cta-section .btn-secondary { background: transparent; color: var(--white); border-color: var(--white); }
+        .cta-section .btn-secondary:hover { background: var(--white); color: var(--carnelian-red); }
+
+        /* ── Footer ──────────────────────────────────────── */
+        .footer { background: var(--gray-900); color: var(--white); padding: var(--space-2xl) 0; }
+        .footer-content { text-align: center; }
+        .footer-logos { display: flex; align-items: center; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-md); flex-wrap: wrap; }
+        .footer-logo { font-weight: 700; }
+        .footer-logo.ecornell { height: 24px; width: auto; }
+        .footer-meta { font-style: italic; color: var(--gray-400); font-size: 0.9375rem; }
+        .footer-info p { margin-bottom: 4px; color: var(--gray-400); font-size: 0.8125rem; }
+        .footer-info p:last-child { margin-bottom: 0; }
+
+        /* ── Floating nav ────────────────────────────────── */
+        .floating-nav { position: fixed; bottom: 20px; right: 20px; background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); z-index: 999; opacity: 0; transform: translateY(20px); transition: all var(--transition-base); border: 1px solid var(--gray-200); overflow: hidden; }
+        .floating-nav.visible { opacity: 1; transform: translateY(0); }
+        .floating-nav-toggle { background: var(--carnelian-red); color: var(--white); border: none; padding: var(--space-sm) var(--space-md); cursor: pointer; display: flex; align-items: center; gap: var(--space-xs); width: 100%; font-family: var(--font-primary); font-size: 0.8125rem; font-weight: 600; transition: background var(--transition-base); }
+        .floating-nav-toggle:hover { background: var(--carnelian-red-dark); }
+        .floating-nav-toggle svg { width: 14px; height: 14px; transition: transform var(--transition-base); }
+        .floating-nav.expanded .floating-nav-toggle svg { transform: rotate(180deg); }
+        .floating-nav-menu { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; background: var(--white); }
+        .floating-nav.expanded .floating-nav-menu { max-height: 440px; }
+        .floating-nav-link { display: block; padding: 0.625rem var(--space-md); color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: all var(--transition-base); border-bottom: 1px solid var(--gray-100); }
+        .floating-nav-link:hover, .floating-nav-link.active { background: var(--gray-50); color: var(--carnelian-red); }
+        .floating-nav-link:last-child { border-bottom: none; }
+        .jump-to-top { position: fixed; bottom: 20px; left: 20px; background: var(--gray-700); color: var(--white); border: none; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition-base); box-shadow: var(--shadow-base); z-index: 998; opacity: 0; transform: translateY(20px); text-decoration: none; }
+        .jump-to-top.visible { opacity: 1; transform: translateY(0); }
+        .jump-to-top:hover { background: var(--carnelian-red); color: var(--white); transform: translateY(-2px); }
+        .jump-to-top svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* ── Mobile ──────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .workshop-intro, .release-hero, .release-columns, .library-breakdown, .symposia-grid, .programs-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            :root { --container-padding: 1rem; --space-3xl: 4rem; --space-2xl: 2.5rem; }
+            .nav-menu { display: none; }
+            .nav-context { display: none; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+            .hero-actions { flex-direction: column; align-items: stretch; }
+            .feature-grid { grid-template-columns: 1fr; }
+            .workshop-row { grid-template-columns: 1fr; gap: 4px; }
+            .workshop-row.header { display: none; }
+            .workshop-row { padding: var(--space-md); }
+            .quarter-stats { grid-template-columns: 1fr; }
+            .ml-table th, .ml-table td { padding: var(--space-sm); font-size: 0.8125rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+        }
+        a:focus, .btn:focus, .nav-link:focus, button:focus, input:focus { outline: 2px solid var(--carnelian-red); outline-offset: 2px; }
+    </style>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="https://ecornell.cornell.edu/corporate-programs/" target="_blank" class="ecornell-logo" aria-label="eCornell">
+                <svg viewBox="0 0 446.95 117.21" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto;">
+                    <defs><style>.st0{fill:#B31B1B;}</style></defs>
+                    <g>
+                        <path class="st0" d="M140,33.68c-14,0-21.46,8.93-21.46,21.53v6.36c0,13.05,8.5,20.74,21.62,20.74,10.3,0,18.61-6.16,20.23-14.66h-10.69c-1.16,3.23-4.39,5.91-9.58,5.91-7.06,0-9.83-4.75-9.83-10.2v-1.16h30.4v-8.14c0-11.18-6.97-20.38-20.69-20.38ZM149.56,53.62h-19.27v-.46c0-6.25,2.68-10.92,9.67-10.92,6.51,0,9.56,4.4,9.56,10.19l.04,1.19Z"/>
+                        <path class="st0" d="M194.59,27.68c9.29,0,13.77,6.17,14.58,13.24h11.62c-.61-12.78-10.37-23.51-26.2-23.51-18.85,0-27.35,12.05-27.35,28.07v8.92c0,16,8.5,28.1,27.35,28.1,15.83,0,25.59-10.74,26.2-23.54h-11.62c-.81,7.08-5.29,13.24-14.58,13.24-10.45,0-14.92-7.15-14.92-17.15v-10.19c0-10.02,4.47-17.18,14.92-17.18Z"/>
+                        <path class="st0" d="M248.64,33.68c-14,0-21.91,9.1-21.91,21v6.61c0,11.89,8,21,21.91,21s21.91-9.13,21.91-21v-6.61c0-11.9-7.96-21-21.91-21ZM258.75,62.11c0,6.07-3.23,10.63-10.11,10.63s-10.1-4.56-10.1-10.63v-8.22c0-6.1,3.23-10.65,10.1-10.65s10.11,4.55,10.11,10.65v8.22Z"/>
+                        <path class="st0" d="M288.44,43.77v-9h-11.54v46.5h12.16v-21.49c0-9.41,4.27-13.32,12.23-13.32h2.5v-12.07h-1.42c-6.98,0-12.43,2.41-13.93,9.38Z"/>
+                        <path class="st0" d="M336,33.68c-6.63,0-11.37,2.31-13.69,6.61v-5.55h-11.68v46.5h12.17v-27.54c0-6.26,3.48-9.48,8.94-9.48,5.89,0,8.48,3.85,8.48,9.22v27.8h12.16v-29.77c0-11.18-6.38-17.79-16.38-17.79Z"/>
+                        <path class="st0" d="M379.74,33.68c-13.94,0-21.45,8.93-21.45,21.53v6.36c0,13.05,8.5,20.74,21.64,20.74,10.27,0,18.58-6.16,20.19-14.66h-10.62c-1.18,3.23-4.39,5.91-9.57,5.91-7.07,0-9.84-4.75-9.84-10.2v-1.16h30.39v-8.14c0-11.18-6.96-20.38-20.74-20.38ZM389.32,53.62h-19.23v-.46c0-6.25,2.68-10.92,9.65-10.92,6.54,0,9.58,4.4,9.58,10.19v1.19Z"/>
+                        <path class="st0" d="M418.05,66.12V12.9h-11.33v53.87c0,11.5,8,15.6,15.47,15.6h2.81v-9.66h-.83c-4.34,0-6.12-1.91-6.12-6.59Z"/>
+                        <path class="st0" d="M446.12,72.71c-4.37,0-6.15-1.91-6.15-6.59V12.9h-11.33v53.87c0,11.5,8,15.6,15.47,15.6h2.89v-9.66h-.88Z"/>
+                        <path class="st0" d="M92.62,0H.92C.42,0,0,.41,0,.91v68.27c.12,4-.25,15.74,11,25.54,0,0,8.4,7.77,26,17.41,3,1.65,6.27,3.36,9.81,5.08,3.54-1.72,6.81-3.43,9.81-5.08,17.55-9.64,25.94-17.41,25.94-17.41,11.25-9.8,10.88-21.53,11-25.54V.91c0-.51-.42-.92-.93-.91ZM72.9,84.66s-2.51,3-13.85,10.19c-.45.28-11.47,7-12.28,7s-11.83-6.69-12.29-7c-11.33-7.21-13.85-10.19-13.85-10.19-7.7-6.65-7.31-12.13-7.31-16.87V14c0-.25.21-.46.46-.46h66c.25,0,.45.2.45.45v53.79c-.02,4.74.38,10.21-7.33,16.87Z"/>
+                    </g>
+                </svg>
+            </a>
+            <span class="nav-divider"></span>
+            <span class="nav-context">Product Mgmt Update</span>
+        </div>
+        <div class="nav-menu" id="nav-menu">
+            <a href="#hero" class="nav-link active" data-section="hero">Overview</a>
+            <a href="#workshops" class="nav-link" data-section="workshops">Workshops</a>
+            <a href="#pricing" class="nav-link" data-section="pricing">Pricing</a>
+            <a href="#calendar" class="nav-link" data-section="calendar">Calendar</a>
+            <a href="#library" class="nav-link" data-section="library">On-Demand</a>
+            <a href="#releases" class="nav-link" data-section="releases">Releases</a>
+            <a href="#symposia" class="nav-link" data-section="symposia">Symposia</a>
+            <a href="#programs" class="nav-link" data-section="programs">Programs</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="hero" class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-logo">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="95" fill="none" stroke="#B31B1B" stroke-width="2"/>
+            <circle cx="100" cy="100" r="85" fill="none" stroke="#B31B1B" stroke-width="1"/>
+            <path id="top-text-m" d="M 100 100 m -80 0 A 80 80 0 0 1 100 20 A 80 80 0 0 1 180 100" fill="none"/>
+            <text font-family="serif" font-size="11" font-weight="bold" fill="#B31B1B">
+                <textPath href="#top-text-m" startOffset="0%">CORNELL UNIVERSITY</textPath>
+            </text>
+            <g transform="translate(100,100)">
+                <path d="M -25 -35 L 25 -35 L 25 -10 L 25 10 Q 25 25 0 40 Q -25 25 -25 10 L -25 -10 Z" fill="none" stroke="#B31B1B" stroke-width="1.5"/>
+                <line x1="-25" y1="-10" x2="25" y2="-10" stroke="#B31B1B" stroke-width="1"/>
+                <line x1="0" y1="-35" x2="0" y2="40" stroke="#B31B1B" stroke-width="1"/>
+                <rect x="-15" y="-5" width="30" height="20" fill="none" stroke="#B31B1B" stroke-width="1"/>
+            </g>
+        </svg>
+    </div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            May 26, 2026 · Q4 FY26
+        </div>
+        <h1 class="hero-title">
+            <span class="title-line">What's new at</span>
+            <span class="title-line accent">eCornell?</span>
+        </h1>
+        <p class="hero-subtitle">A quarterly look at what's new, what's launching, and what's next across eCornell's AI Workshops, certificate programs, the AI On-Demand Lessons Library, and upcoming Symposia.</p>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number" data-count="17">0</span>
+                <span class="stat-label">AI Workshops Upcoming</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-count="166">0</span>
+                <span class="stat-label">OnDemand Lessons</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-count="14">0</span>
+                <span class="stat-label">Cornell Faculty</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" data-count="13">0</span>
+                <span class="stat-label">Q4 Launches Ahead</span>
+            </div>
+        </div>
+        <div class="hero-actions">
+            <a href="#workshops" class="btn btn-primary">Explore the Update</a>
+            <a href="#calendar" class="btn btn-secondary">View Workshop Calendar</a>
+            <a href="mailto:rdm267@cornell.edu?subject=Product Management Update — Follow-up" class="btn btn-primary">Let's Discuss</a>
+        </div>
+    </div>
+</section>
+
+<!-- 00: People Leader Program -->
+<section id="people-leader" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">00</span>
+            <h2 class="section-title">Cornell People Leader Program</h2>
+            <p class="section-subtitle">A structured leadership curriculum built on Cornell's proven framework — developing leaders across three progressive dimensions: Leading Self, Leading Others, and Leading the Business.</p>
+        </div>
+
+        <div style="max-width:1060px;margin:0 auto;">
+
+            <!-- Three pillars -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);margin-bottom:var(--space-2xl);">
+                <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:var(--space-xl);transition:all var(--transition-base);border-top:4px solid var(--carnelian-red);">
+                    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--carnelian-red);margin-bottom:var(--space-xs);">Foundation</div>
+                    <h3 style="font-size:1.375rem;margin-bottom:var(--space-xs);">Leading Self</h3>
+                    <p style="font-size:0.875rem;color:var(--gray-500);font-style:italic;margin-bottom:var(--space-md);">Decision Quality + Personal Effectiveness</p>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;border-bottom:1px solid var(--gray-100);"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Strategic Decision Making</li>
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;border-bottom:1px solid var(--gray-100);"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Problem Solving Using Evidence and Critical Thinking</li>
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Navigating Power Relationships</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:var(--space-xl);transition:all var(--transition-base);border-top:4px solid var(--carnelian-red);">
+                    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--carnelian-red);margin-bottom:var(--space-xs);">Execution</div>
+                    <h3 style="font-size:1.375rem;margin-bottom:var(--space-xs);">Leading Others</h3>
+                    <p style="font-size:0.875rem;color:var(--gray-500);font-style:italic;margin-bottom:var(--space-md);">Driving Performance Through People</p>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;border-bottom:1px solid var(--gray-100);"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Leading Collaborative Teams</li>
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;border-bottom:1px solid var(--gray-100);"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Motivating People for High Performance</li>
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Applying Strategic Influence</li>
+                    </ul>
+                </div>
+
+                <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:var(--space-xl);transition:all var(--transition-base);border-top:4px solid var(--carnelian-red);">
+                    <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--carnelian-red);margin-bottom:var(--space-xs);">Acceleration</div>
+                    <h3 style="font-size:1.375rem;margin-bottom:var(--space-xs);">Leading the Business</h3>
+                    <p style="font-size:0.875rem;color:var(--gray-500);font-style:italic;margin-bottom:var(--space-md);">Business &amp; Financial Acumen + Strategy</p>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;border-bottom:1px solid var(--gray-100);"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Value Creation &amp; Profitability</li>
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;border-bottom:1px solid var(--gray-100);"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Strategic Business Planning &amp; Forecasting</li>
+                        <li style="padding:0.5rem 0;padding-left:1.25rem;position:relative;color:var(--gray-700);font-size:0.9375rem;"><span style="position:absolute;left:0;top:0.9rem;width:6px;height:6px;border-radius:50%;background:var(--carnelian-red);display:block;"></span>Developing and Communicating Vision &amp; Strategy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Program components -->
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-lg);margin-bottom:var(--space-xl);">
+                <div style="background:linear-gradient(135deg,var(--carnelian-red) 0%,var(--carnelian-red-dark) 100%);border-radius:var(--radius-lg);padding:var(--space-xl);color:var(--white);">
+                    <h4 style="color:var(--white);font-family:var(--font-serif);margin-bottom:var(--space-md);">Cornell Keynotes</h4>
+                    <p style="color:rgba(255,255,255,0.85);font-size:0.9375rem;margin-bottom:var(--space-md);">Three live keynote sessions delivered by Cornell faculty — connecting curriculum to current business challenges.</p>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <a href="https://ecornell.cornell.edu/keynotes/overview/K062426/" target="_blank" style="padding:10px 14px;background:rgba(255,255,255,0.12);border-radius:var(--radius-base);color:var(--white);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.22)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+                            <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);margin-bottom:3px;">June 24, 2026</div>
+                            <div style="font-size:0.9375rem;font-weight:600;">The Future of Leadership Pipelines</div>
+                            <div style="font-size:0.8125rem;color:rgba(255,255,255,0.75);margin-top:2px;">Dr. Bradford Bell &amp; Penelope Sur</div>
+                        </a>
+                        <a href="https://ecornell.cornell.edu/keynotes/overview/K070826/" target="_blank" style="padding:10px 14px;background:rgba(255,255,255,0.12);border-radius:var(--radius-base);color:var(--white);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.22)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+                            <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);margin-bottom:3px;">July 8, 2026</div>
+                            <div style="font-size:0.9375rem;font-weight:600;">The Power of Advocacy</div>
+                            <div style="font-size:0.8125rem;color:rgba(255,255,255,0.75);margin-top:2px;">JR Keller &amp; Melody Kelleher</div>
+                        </a>
+                        <a href="https://ecornell.cornell.edu/keynotes/overview/K081226/" target="_blank" style="padding:10px 14px;background:rgba(255,255,255,0.12);border-radius:var(--radius-base);color:var(--white);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.22)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+                            <div style="font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.6);margin-bottom:3px;">August 12, 2026</div>
+                            <div style="font-size:0.9375rem;font-weight:600;">Write Smarter, Not Harder</div>
+                            <div style="font-size:0.8125rem;color:rgba(255,255,255,0.75);margin-top:2px;">Lauren Chambliss</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:var(--space-md);">
+                    <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:var(--space-lg);flex:1;">
+                        <h4 style="font-family:var(--font-serif);color:var(--gray-800);margin-bottom:var(--space-xs);">Strategic Business Project</h4>
+                        <p style="font-size:0.9375rem;color:var(--gray-600);margin-bottom:0;">Participants apply program learning to a real business challenge, supported by facilitator coaching and feedback at each stage.</p>
+                    </div>
+                    <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:var(--space-lg);flex:1;">
+                        <h4 style="font-family:var(--font-serif);color:var(--gray-800);margin-bottom:var(--space-xs);">Custom Live Events <span style="font-size:0.75rem;font-weight:600;padding:2px 8px;background:rgba(179,27,27,0.1);color:var(--carnelian-red);border-radius:100px;text-transform:uppercase;letter-spacing:0.05em;font-family:var(--font-primary);">Optional</span></h4>
+                        <p style="font-size:0.9375rem;color:var(--gray-600);margin-bottom:var(--space-sm);">Add live sessions tailored to your organization's priorities:</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                            <span style="padding:4px 10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:100px;font-size:0.8125rem;color:var(--gray-700);">Personal Resilience</span>
+                            <span style="padding:4px 10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:100px;font-size:0.8125rem;color:var(--gray-700);">Strategic Influence</span>
+                            <span style="padding:4px 10px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:100px;font-size:0.8125rem;color:var(--gray-700);">Leading Change</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA callout -->
+            <div style="text-align:center;padding:var(--space-xl);background:var(--gray-50);border-radius:var(--radius-lg);border:1px solid var(--gray-200);">
+                <p style="font-family:var(--font-serif);font-size:1.125rem;color:var(--gray-800);margin-bottom:var(--space-md);">Interested in bringing the People Leader Program to your organization?</p>
+                <a href="mailto:rdm267@cornell.edu?subject=People Leader Program — Inquiry" class="btn btn-primary">Let's Discuss</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 01: Workshops Overview -->
+<section id="workshops" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">What are Cornell Live Faculty AI Workshops?</h2>
+            <p class="section-subtitle">Cornell Live Faculty AI Workshops that teach AI skills and strategic perspectives through interactive sessions led by Cornell's world-class faculty.</p>
+        </div>
+
+        <div class="workshop-intro">
+            <div class="workshop-intro-copy">
+                <h3>Education with measurable impact.</h3>
+                <p class="lead">Competitive skills and strategies, immediate application, and job-ready outcomes for all industries and functions.</p>
+                <p>Three-hour live experiences pair faculty-led structured instruction with guided practice on real tools — so participants leave with strategies they can apply the same week.</p>
+                <div style="margin-top:var(--space-lg);padding:var(--space-md);background:var(--white);border-left:4px solid var(--carnelian-red);border-radius:var(--radius-base);">
+                    <p style="margin-bottom:0;font-weight:600;color:var(--gray-800);">Access to three complimentary workshop seats: <a href="https://ecornell.cornell.edu/portal/ecornellworkshops-requestaccess/" style="color:var(--carnelian-red);text-decoration:underline;">Request access here</a></p>
+                </div>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
+                    </div>
+                    <h4>Live Online Learning</h4>
+                    <p>Faculty-led structured instruction, guided practice, real tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h4>3-Hour Format</h4>
+                    <p>Live, online learning experiences designed for immediate impact.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h4>Meaningful Engagement</h4>
+                    <p>Live engagement, Cornell faculty-led, global peer interaction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h4>Immediate Impact</h4>
+                    <p>Competitive skills and strategies for all industries and functions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 02: Pricing -->
+<section id="pricing" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <h2 class="section-title">Pricing Guide</h2>
+            <p class="section-subtitle">Designed to provide value to Enterprise Clients and encourage trade-up to the highly-engaging "subscription" option.</p>
+        </div>
+
+        <div class="pricing-wrap">
+            <div class="pricing-grid">
+                <div></div>
+                <div class="pricing-header retail">Retail</div>
+                <div class="pricing-header enterprise">Credit Card Portal</div>
+                <div class="pricing-header enterprise">Prepaid Portal</div>
+
+                <div class="pricing-row">
+                    <div class="pricing-label">Individual Workshop <span class="pricing-label-sub">Single 3-hour live session</span></div>
+                    <div class="pricing-value accent">$449</div>
+                    <div class="pricing-value">1 Seat</div>
+                    <div class="pricing-value">1 Seat</div>
+                </div>
+
+                <div class="pricing-row">
+                    <div class="pricing-label">Workshop All-Access Pass <span class="pricing-label-sub">6 months of unlimited workshops</span></div>
+                    <div class="pricing-value accent">$999</div>
+                    <div class="pricing-value">2 Seats</div>
+                    <div class="pricing-value">2 Seats</div>
+                </div>
+            </div>
+            <p class="pricing-footnote">* All-Access Pass is included in most Certificates. Enterprise Credit Card Portal and Enterprise Prepaid Portal pricing align on seat allocation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 03: Workshop Calendar -->
+<section id="calendar" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Workshop Calendar</h2>
+            <p class="section-subtitle">Browse upcoming live online AI Workshops by topic, faculty, or month. Filter or search to find exactly what your team needs.</p>
+        </div>
+
+        <div class="calendar-wrap">
+            <div class="calendar-controls">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="workshop-search" placeholder="Search by workshop title or faculty…" aria-label="Search workshops">
+                </div>
+                <div class="filter-group" id="month-filters">
+                    <button class="filter-btn active" data-month="all">All</button>
+                    <button class="filter-btn" data-month="May">May</button>
+                    <button class="filter-btn" data-month="Jun">Jun</button>
+                    <button class="filter-btn" data-month="Jul">Jul</button>
+                    <button class="filter-btn" data-month="Aug+">Aug+</button>
+                </div>
+            </div>
+
+            <div class="workshop-list" id="workshop-list">
+                <div class="workshop-row header">
+                    <div>Workshop</div>
+                    <div>Faculty</div>
+                    <div>Date</div>
+                    <div>Time</div>
+                </div>
+            </div>
+            <p class="calendar-footer"><strong id="workshop-count">17</strong> workshops scheduled · All times ET</p>
+        </div>
+    </div>
+</section>
+
+<!-- 04: AI On-Demand Lessons Library -->
+<section id="library" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <h2 class="section-title">NEW: AI On-Demand Lessons Library</h2>
+            <p class="section-subtitle">A curated library of lessons drawn from eCornell's strongest AI certificates — ready for self-paced enterprise consumption. Now updated with May 2026 additions.</p>
+        </div>
+
+        <div class="library-feature">
+            <div class="library-hero">
+                <div class="library-hero-content">
+                    <div class="library-eyebrow">Q4 FY26 OnDemand · May 2026 Update</div>
+                    <h3>The AI On-Demand Lessons Library</h3>
+                    <p>Hand-picked lessons across AI strategy, generative AI, law &amp; policy, cybersecurity, marketing, and machine learning — plus the critical thinking and change management content that makes them stick.</p>
+                    <div class="library-counter">
+                        <div class="library-counter-item">
+                            <div class="library-counter-num" data-count="83">0</div>
+                            <div class="library-counter-label">AI-Specific Lessons</div>
+                        </div>
+                        <div class="library-counter-plus">+</div>
+                        <div class="library-counter-item">
+                            <div class="library-counter-num" data-count="72">0</div>
+                            <div class="library-counter-label">Related, Non-AI Lessons</div>
+                        </div>
+                    </div>
+                    <div class="library-counter-total">= <strong>166 lessons total</strong>, live and growing (+10 added May 2026)</div>
+                </div>
+            </div>
+
+            <div class="library-breakdown">
+                <div class="library-col">
+                    <div class="library-col-header">
+                        <div class="library-col-count">83</div>
+                        <div class="library-col-title">AI-Specific Lessons</div>
+                        <div class="library-col-sub">Drawn from eCornell's leading AI certificates</div>
+                    </div>
+                    <div class="library-cert-group">
+                        <div class="library-cert-label">All courses from these certs</div>
+                        <div class="library-cert-list">
+                            <span class="library-cert-pill">Generative AI for Productivity</span>
+                            <span class="library-cert-pill">Cybersecurity &amp; AI Strategy</span>
+                            <span class="library-cert-pill">AI Law and Policy</span>
+                            <span class="library-cert-pill">AI Strategy (2026)</span>
+                        </div>
+                    </div>
+                    <div class="library-cert-group">
+                        <div class="library-cert-label">Select courses from these certs</div>
+                        <div class="library-cert-list">
+                            <span class="library-cert-pill">AI Skills for Workplace Communications</span>
+                            <span class="library-cert-pill">Machine Learning</span>
+                            <span class="library-cert-pill">Marketing AI</span>
+                            <span class="library-cert-pill">Growth Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="library-col">
+                    <div class="library-col-header">
+                        <div class="library-col-count">72</div>
+                        <div class="library-col-title">Related, Non-AI-Specific Lessons</div>
+                        <div class="library-col-sub">Capabilities that make AI adoption work</div>
+                    </div>
+                    <div class="library-cert-group">
+                        <div class="library-cert-label">Select courses from these certs</div>
+                        <div class="library-cert-list">
+                            <span class="library-cert-pill">Change Management</span>
+                            <span class="library-cert-pill">Critical Thinking</span>
+                            <span class="library-cert-pill">Data Ethics</span>
+                        </div>
+                    </div>
+
+                    <div class="library-new-banner">
+                        <div class="library-new-banner-label">May 2026 OnDemand Additions — NEW</div>
+                        <div style="font-size:0.9375rem;color:var(--gray-700);margin-top:var(--space-xs);">
+                            <strong style="color:var(--carnelian-red);">10 new lessons</strong> added across healthcare leadership topics:
+                        </div>
+                        <ul style="list-style:none;padding:0;margin-top:var(--space-xs);">
+                            <li style="padding:4px 0;font-size:0.875rem;color:var(--gray-700);border-bottom:1px solid var(--gray-100);">Negotiation Skills for Healthcare Leaders <small style="color:var(--gray-500);">3 lessons</small></li>
+                            <li style="padding:4px 0;font-size:0.875rem;color:var(--gray-700);border-bottom:1px solid var(--gray-100);">Resilient Leadership in Healthcare <small style="color:var(--gray-500);">3 lessons</small></li>
+                            <li style="padding:4px 0;font-size:0.875rem;color:var(--gray-700);">Technical Communication With AI <small style="color:var(--gray-500);">4 lessons</small></li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top:var(--space-md);padding-top:var(--space-md);border-top:1px solid var(--gray-100);">
+                        <div class="library-cert-label">Q3 March Additions (Already Live)</div>
+                        <div style="font-size:0.875rem;color:var(--gray-700);margin-top:var(--space-xs);">
+                            <strong style="color:var(--carnelian-red);">9 new</strong> + <strong style="color:var(--carnelian-red);">38 updated</strong> lessons across Purposeful Leadership in Healthcare, Confident Decision Making, Technology Management, Project Management, Team Building, Employment Law, and more.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 05: Releases -->
+<section id="releases" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">05</span>
+            <h2 class="section-title">New Releases</h2>
+            <p class="section-subtitle">New launches and content updates across Q4 FY26 — what's live now and what's coming soon.</p>
+        </div>
+
+        <div class="release-hero">
+            <div class="quarter-card current">
+                <div class="quarter-label" style="color:rgba(255,255,255,0.8);">In Market Now</div>
+                <h3>Q4 FY26 — Live</h3>
+                <p>April launches are live and scaling. New certificate in Clinical Pharmacology plus three Mentored Learning relaunches now available.</p>
+                <div class="quarter-stats">
+                    <div>
+                        <div class="quarter-stat-num">1</div>
+                        <div class="quarter-stat-label">New Certificate</div>
+                    </div>
+                    <div>
+                        <div class="quarter-stat-num">3</div>
+                        <div class="quarter-stat-label">ML Relaunches</div>
+                    </div>
+                    <div>
+                        <div class="quarter-stat-num">10</div>
+                        <div class="quarter-stat-label">New OD Lessons</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quarter-card">
+                <div class="quarter-label">Coming Soon</div>
+                <h3>Q4 FY26 — Pipeline</h3>
+                <p>A broad slate from Climate Science to Space Technology to Math for AI — plus two additional Mentored Learning relaunches.</p>
+                <div class="quarter-stats">
+                    <div>
+                        <div class="quarter-stat-num">11</div>
+                        <div class="quarter-stat-label">New Certificates</div>
+                    </div>
+                    <div>
+                        <div class="quarter-stat-num">2</div>
+                        <div class="quarter-stat-label">ML Relaunches</div>
+                    </div>
+                    <div>
+                        <div class="quarter-stat-num">13</div>
+                        <div class="quarter-stat-label">Total Launches</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs" role="tablist">
+            <button class="tab-btn active" data-tab="q4-live">Q4 Live Now</button>
+            <button class="tab-btn" data-tab="q4-coming">Q4 Coming Soon</button>
+            <button class="tab-btn" data-tab="q3-ref">Q3 Reference</button>
+        </div>
+
+        <!-- Q4 Live Now -->
+        <div class="tab-panel active" id="q4-live" role="tabpanel">
+            <div class="release-columns">
+                <div class="release-card">
+                    <h4>New Certificate — April Launch <span class="badge badge-new">Live</span></h4>
+                    <ul>
+                        <li>Evidence-Based Clinical Pharmacology</li>
+                    </ul>
+                </div>
+                <div class="release-card">
+                    <h4>Mentored Learning — Single Course Relaunches <span class="badge badge-new">Live</span></h4>
+                    <ul>
+                        <li>Finance for Engineers</li>
+                        <li>Corporate Governance</li>
+                        <li>Applied Statistics</li>
+                    </ul>
+                </div>
+                <div class="release-card release-card-full">
+                    <h4>May 2026 OnDemand Additions <span class="badge badge-new">New</span></h4>
+                    <ul>
+                        <li>Negotiation Skills for Healthcare Leaders <small>3 new lessons</small></li>
+                        <li>Resilient Leadership in Healthcare <small>3 new lessons</small></li>
+                        <li>Technical Communication With AI <small>4 new lessons</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q4 Coming Soon -->
+        <div class="tab-panel" id="q4-coming" role="tabpanel">
+            <div class="release-columns">
+                <div class="release-card">
+                    <h4>New Certificates <span class="badge badge-new">Q4 FY26</span></h4>
+                    <ul>
+                        <li>Sustainable Design and Real Estate Development</li>
+                        <li>Space Technology</li>
+                        <li>Applied Mathematics for AI and Data Science</li>
+                        <li>Climate Science and Energy Solutions</li>
+                        <li>Cybersecurity &amp; AI in Healthcare</li>
+                        <li>Computer Vision</li>
+                        <li>AI for HR</li>
+                        <li>Etching</li>
+                        <li>Photolithography</li>
+                        <li>Principles of Computational Thinking for Engineers</li>
+                        <li>Operations Analytics</li>
+                    </ul>
+                </div>
+                <div class="release-card">
+                    <h4>Single Course — Mentored Learning Relaunches <span class="badge badge-update">Coming Soon</span></h4>
+                    <ul>
+                        <li>Fluid Dynamics Simulations Using Ansys</li>
+                        <li>Data Science for Machine Learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 Reference -->
+        <div class="tab-panel" id="q3-ref" role="tabpanel">
+            <div class="release-columns">
+                <div class="release-card">
+                    <h4>Q3 Certificates Launched <span class="badge badge-new">Feb Launch</span></h4>
+                    <ul>
+                        <li>Technical Communication With AI</li>
+                        <li>Women in Healthcare Leadership</li>
+                        <li>Hiring the Justice-Impacted</li>
+                        <li>OmniCommerce Leadership</li>
+                    </ul>
+                </div>
+                <div class="release-card">
+                    <h4>Q3 Mentored Learning — Single Course <span class="badge badge-new">Launched</span></h4>
+                    <ul>
+                        <li>Demand Marketing</li>
+                        <li>Restaurant Distribution Strategy</li>
+                        <li>Software-Defined Networking</li>
+                        <li>Cannabis Law and Policy</li>
+                        <li>Senior Living Management</li>
+                        <li>Data Security and Privacy Policy</li>
+                    </ul>
+                </div>
+                <div class="release-card release-card-full">
+                    <h4>Q3 Certificates Retired (Transitioned to Mentored Learning) <span class="badge badge-retire">Retired April 2026</span></h4>
+                    <ul>
+                        <li>Finance for Engineers <small>Replaced by CHEMEC01ML (Mentored Learning)</small></li>
+                        <li>Corporate Governance <small>Replaced by LAWC12ML (Mentored Learning)</small></li>
+                        <li>Applied Statistics <small>Replaced by JCBC19 (Mentored Learning)</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 06: Symposia -->
+<section id="symposia" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">06</span>
+            <h2 class="section-title">Symposium Update</h2>
+            <p class="section-subtitle">Faculty-led symposia spanning AI, marketing, leadership, hospitality, and HR. All symposia have transitioned to a 2-day format across all verticals.</p>
+        </div>
+
+        <div class="symposia-grid">
+            <div class="symposium-card">
+                <div class="symposium-date-badge">May 12–13, 2026</div>
+                <h4>Workplace Belonging Symposium</h4>
+                <p style="font-size:0.8125rem;color:var(--gray-500);margin-bottom:var(--space-xs);">Formerly DEI Symposium</p>
+                <div class="symposium-faculty">Prof. Susanne Bruyere</div>
+                <p class="symposium-session">Practicing Allyship with Courage and Accountability</p>
+            </div>
+
+            <div class="symposium-card">
+                <div class="symposium-date-badge">May 26–27, 2026</div>
+                <h4>Project Management Symposium</h4>
+                <div class="symposium-faculty">Prof. Linda Nozick</div>
+                <p class="symposium-session">What High-Performing Project Managers Do Differently</p>
+            </div>
+
+            <div class="symposium-card">
+                <div class="symposium-date-badge">June 9–10, 2026</div>
+                <h4>Marketing Symposium</h4>
+                <div class="symposium-faculty" style="color:var(--gray-600);">Faculty TBD</div>
+                <p class="symposium-session">Staying Relevant Without Losing Your Brand · The Creative Edge: Where AI Meets Human Judgment</p>
+            </div>
+
+            <div class="symposium-card">
+                <div class="symposium-date-badge">June 24–25, 2026</div>
+                <h4>AI Symposium</h4>
+                <div class="symposium-faculty">Prof. Karan Girotra</div>
+                <p class="symposium-session">Beyond the Headlines: AI Trends Reshaping Work</p>
+            </div>
+
+            <div class="symposium-card">
+                <div class="symposium-date-badge">July 14–15, 2026</div>
+                <h4>Leadership Symposium</h4>
+                <div class="symposium-faculty">Prof. Mike Fontaine</div>
+                <p class="symposium-session">Turning Strategy into Everyday Decisions</p>
+            </div>
+
+            <div class="symposium-card">
+                <div class="symposium-date-badge">Aug 11–12, 2026</div>
+                <h4>Hospitality Symposium</h4>
+                <div class="symposium-faculty">Prof. Chris Anderson</div>
+                <p class="symposium-session">Navigating High Volume, Complexity, and Team Alignment</p>
+            </div>
+
+            <div class="symposium-card">
+                <div class="symposium-date-badge">Aug 18–19, 2026</div>
+                <h4>HR Symposium</h4>
+                <div class="symposium-faculty" style="color:var(--gray-600);">Faculty TBD</div>
+                <p class="symposium-session">Supporting Employees, Meeting Operational Demands · Building a Brand That Attracts and Retains</p>
+            </div>
+        </div>
+
+        <div class="symposia-note">* Symposia have adjusted to a 2-day format across all verticals. All dates subject to confirmation.</div>
+    </div>
+</section>
+
+<!-- 07: Open Live Programs -->
+<section id="programs" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-number">07</span>
+            <h2 class="section-title">Open Live Programs</h2>
+            <p class="section-subtitle">Immersive multi-day programs for professionals seeking intensive, in-person or live-virtual development experiences with Cornell faculty.</p>
+        </div>
+
+        <div class="programs-grid">
+            <div class="program-card featured">
+                <span class="program-tag">Upcoming · July 2026</span>
+                <h4>Food Executive Program</h4>
+                <div class="program-meta">
+                    <div class="program-meta-row"><span class="program-meta-label">Dates</span><span class="program-meta-value">July 12–17, 2026</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Audience</span><span class="program-meta-value">Grocery Store directors, managers, leaders in CPG</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">List Price</span><span class="program-meta-value">$9,999</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Enterprise</span><span class="program-meta-value">$8,999</span></div>
+                </div>
+            </div>
+
+            <div class="program-card featured">
+                <span class="program-tag capacity">At Capacity — Inquiries Only</span>
+                <h4>OmniCommerce Leadership — NEW</h4>
+                <p style="font-size:0.8125rem;color:var(--gray-500);margin-bottom:var(--space-sm);">Combined RMS and Omnichannel Content</p>
+                <div class="program-meta">
+                    <div class="program-meta-row"><span class="program-meta-label">Dates</span><span class="program-meta-value">July 27–31, 2026</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Audience</span><span class="program-meta-value">Senior leaders across retail and omnichannel industries</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">List Price</span><span class="program-meta-value">$9,999</span></div>
+                </div>
+            </div>
+
+            <div class="program-card">
+                <span class="program-tag">Upcoming · August 2026</span>
+                <h4>Higher Education Leadership Program</h4>
+                <div class="program-meta">
+                    <div class="program-meta-row"><span class="program-meta-label">Dates</span><span class="program-meta-value">August 10–13, 2026</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Audience</span><span class="program-meta-value">Administrative roles in Higher Education</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">List Price</span><span class="program-meta-value">$2,999</span></div>
+                </div>
+                <p class="program-note">10% discount for members of EACUBO</p>
+            </div>
+
+            <div class="program-card">
+                <span class="program-tag">Rolling Enrollment</span>
+                <h4>General Managers Program</h4>
+                <div class="program-meta">
+                    <div class="program-meta-row"><span class="program-meta-label">Virtual</span><span class="program-meta-value">Monthly live virtual courses</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Capstone</span><span class="program-meta-value">June 14–19, 2026 · Jan 18–22, 2027</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Audience</span><span class="program-meta-value">Full-service Hotel GMs or soon-to-be GMs</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">List Price</span><span class="program-meta-value">$11,500</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Enterprise</span><span class="program-meta-value">$8,998</span></div>
+                </div>
+            </div>
+
+            <div class="program-card" style="grid-column:1/-1;">
+                <span class="program-tag" style="background:rgba(100,116,139,0.1);color:var(--gray-600);">Not Running June 2026</span>
+                <h4>Hospitality Professional Development Program</h4>
+                <div class="program-meta">
+                    <div class="program-meta-row"><span class="program-meta-label">Status</span><span class="program-meta-value">Will not run June 2026 — awaiting confirmation of new Faculty Director. Redesigning program for 2027.</span></div>
+                    <div class="program-meta-row"><span class="program-meta-label">Audience</span><span class="program-meta-value">Hospitality professionals, 5+ years experience</span></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Questions, ideas, or deal-specific alignment?</h2>
+            <p>Reach out to discuss how any of these releases map to an opportunity in your territory — from AI Workshops for executive teams to the On-Demand Lessons Library for large-scale deployments.</p>
+            <div class="hero-actions" style="justify-content:center;">
+                <a href="mailto:rdm267@cornell.edu?subject=Product Management Update — Follow-up" class="btn btn-primary">Let's Discuss</a>
+                <a href="#hero" class="btn btn-secondary">Back to Top</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logos">
+                <a href="https://ecornell.cornell.edu/corporate-programs/" target="_blank" class="footer-logo ecornell" aria-label="eCornell">
+                    <svg viewBox="0 0 446.95 117.21" xmlns="http://www.w3.org/2000/svg" style="height:24px;width:auto;">
+                        <defs><style>.st1{fill:#C73E3E;}</style></defs>
+                        <g>
+                            <path class="st1" d="M140,33.68c-14,0-21.46,8.93-21.46,21.53v6.36c0,13.05,8.5,20.74,21.62,20.74,10.3,0,18.61-6.16,20.23-14.66h-10.69c-1.16,3.23-4.39,5.91-9.58,5.91-7.06,0-9.83-4.75-9.83-10.2v-1.16h30.4v-8.14c0-11.18-6.97-20.38-20.69-20.38ZM149.56,53.62h-19.27v-.46c0-6.25,2.68-10.92,9.67-10.92,6.51,0,9.56,4.4,9.56,10.19l.04,1.19Z"/>
+                            <path class="st1" d="M194.59,27.68c9.29,0,13.77,6.17,14.58,13.24h11.62c-.61-12.78-10.37-23.51-26.2-23.51-18.85,0-27.35,12.05-27.35,28.07v8.92c0,16,8.5,28.1,27.35,28.1,15.83,0,25.59-10.74,26.2-23.54h-11.62c-.81,7.08-5.29,13.24-14.58,13.24-10.45,0-14.92-7.15-14.92-17.15v-10.19c0-10.02,4.47-17.18,14.92-17.18Z"/>
+                            <path class="st1" d="M248.64,33.68c-14,0-21.91,9.1-21.91,21v6.61c0,11.89,8,21,21.91,21s21.91-9.13,21.91-21v-6.61c0-11.9-7.96-21-21.91-21ZM258.75,62.11c0,6.07-3.23,10.63-10.11,10.63s-10.1-4.56-10.1-10.63v-8.22c0-6.1,3.23-10.65,10.1-10.65s10.11,4.55,10.11,10.65v8.22Z"/>
+                            <path class="st1" d="M288.44,43.77v-9h-11.54v46.5h12.16v-21.49c0-9.41,4.27-13.32,12.23-13.32h2.5v-12.07h-1.42c-6.98,0-12.43,2.41-13.93,9.38Z"/>
+                            <path class="st1" d="M336,33.68c-6.63,0-11.37,2.31-13.69,6.61v-5.55h-11.68v46.5h12.17v-27.54c0-6.26,3.48-9.48,8.94-9.48,5.89,0,8.48,3.85,8.48,9.22v27.8h12.16v-29.77c0-11.18-6.38-17.79-16.38-17.79Z"/>
+                            <path class="st1" d="M379.74,33.68c-13.94,0-21.45,8.93-21.45,21.53v6.36c0,13.05,8.5,20.74,21.64,20.74,10.27,0,18.58-6.16,20.19-14.66h-10.62c-1.18,3.23-4.39,5.91-9.57,5.91-7.07,0-9.84-4.75-9.84-10.2v-1.16h30.39v-8.14c0-11.18-6.96-20.38-20.74-20.38ZM389.32,53.62h-19.23v-.46c0-6.25,2.68-10.92,9.65-10.92,6.54,0,9.58,4.4,9.58,10.19v1.19Z"/>
+                            <path class="st1" d="M418.05,66.12V12.9h-11.33v53.87c0,11.5,8,15.6,15.47,15.6h2.81v-9.66h-.83c-4.34,0-6.12-1.91-6.12-6.59Z"/>
+                            <path class="st1" d="M446.12,72.71c-4.37,0-6.15-1.91-6.15-6.59V12.9h-11.33v53.87c0,11.5,8,15.6,15.47,15.6h2.89v-9.66h-.88Z"/>
+                            <path class="st1" d="M92.62,0H.92C.42,0,0,.41,0,.91v68.27c.12,4-.25,15.74,11,25.54,0,0,8.4,7.77,26,17.41,3,1.65,6.27,3.36,9.81,5.08,3.54-1.72,6.81-3.43,9.81-5.08,17.55-9.64,25.94-17.41,25.94-17.41,11.25-9.8,10.88-21.53,11-25.54V.91c0-.51-.42-.92-.93-.91ZM72.9,84.66s-2.51,3-13.85,10.19c-.45.28-11.47,7-12.28,7s-11.83-6.69-12.29-7c-11.33-7.21-13.85-10.19-13.85-10.19-7.7-6.65-7.31-12.13-7.31-16.87V14c0-.25.21-.46.46-.46h66c.25,0,.45.2.45.45v53.79c-.02,4.74.38,10.21-7.33,16.87Z"/>
+                        </g>
+                    </svg>
+                </a>
+                <span class="footer-meta">Enterprise Programs · Product Management Update</span>
+            </div>
+            <div class="footer-info">
+                <p>eCornell Corporate Programs · Cornell University</p>
+                <p>May 26, 2026 · Confidential — Internal Use</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating nav -->
+<div class="floating-nav" id="floating-nav">
+    <button class="floating-nav-toggle" id="floating-nav-toggle" aria-label="Toggle section navigation">
+        <span>Jump to</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="floating-nav-menu">
+        <a href="#hero" class="floating-nav-link" data-section="hero">Overview</a>
+        <a href="#workshops" class="floating-nav-link" data-section="workshops">Workshops</a>
+        <a href="#pricing" class="floating-nav-link" data-section="pricing">Pricing</a>
+        <a href="#calendar" class="floating-nav-link" data-section="calendar">Calendar</a>
+        <a href="#library" class="floating-nav-link" data-section="library">On-Demand Lessons Library</a>
+        <a href="#releases" class="floating-nav-link" data-section="releases">Releases</a>
+        <a href="#symposia" class="floating-nav-link" data-section="symposia">Symposia</a>
+        <a href="#programs" class="floating-nav-link" data-section="programs">Programs</a>
+    </div>
+</div>
+
+<a href="#hero" class="jump-to-top" id="jump-to-top" title="Back to top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 14L12 9L17 14H7Z" fill="currentColor"/>
+    </svg>
+</a>
+
+<script>
+// ── Workshop data (upcoming from May 26, 2026) ──────────────────────────
+const workshops = [
+    { title: "Boosting Effectiveness: Using AI Agents Across Your Team",                            faculty: "Karan Girotra",           date: "5/12/26",  time: "12:00pm – 3:00pm" },
+    { title: "Building Enterprise-Ready AI Agents: From Prototypes to Production",                  faculty: "Lutz Finger",             date: "5/13/26",  time: "12:00pm – 3:00pm" },
+    { title: "Search & Discoverability in the Era of AI",                                           faculty: "Chris Anderson",          date: "5/18/26",  time: "10:00am – 1:00pm" },
+    { title: "Intro to Leveraging AI for Work",                                                     faculty: "Ayham Boucher",           date: "5/20/26",  time: "10:00am – 1:00pm" },
+    { title: "Advanced AI for Work",                                                                faculty: "Ayham Boucher",           date: "5/27/26",  time: "10:00am – 1:00pm" },
+    { title: "Designing AI Governance and Organizational Strategy for Enterprise Adoption",          faculty: "Brandon Chiazza",         date: "5/29/26",  time: "1:00pm – 4:00pm"  },
+    { title: "AI for Performance Reviews",                                                          faculty: "JR Keller / John McCarthy",date: "6/3/26",   time: "12:00pm – 3:00pm" },
+    { title: "Intro to Leveraging AI for Work",                                                     faculty: "Ayham Boucher",           date: "6/10/26",  time: "10:00am – 1:00pm" },
+    { title: "Advanced AI for Work",                                                                faculty: "Ayham Boucher",           date: "6/15/26",  time: "10:00am – 1:00pm" },
+    { title: "AI and the Future of HR",                                                             faculty: "JR Keller / John McCarthy",date: "6/17/26",  time: "10:00am – 1:00pm" },
+    { title: "Building Enterprise-Ready AI Agents: From Prototypes to Production",                  faculty: "Lutz Finger",             date: "6/24/26",  time: "12:00pm – 3:00pm" },
+    { title: "Intro to Leveraging AI for Work",                                                     faculty: "Ayham Boucher",           date: "7/14/26",  time: "10:00am – 1:00pm" },
+    { title: "Advanced AI for Work",                                                                faculty: "Ayham Boucher",           date: "7/15/26",  time: "10:00am – 1:00pm" },
+    { title: "Building Enterprise-Ready AI Agents: From Prototypes to Production",                  faculty: "Lutz Finger",             date: "7/22/26",  time: "12:00pm – 3:00pm" },
+    { title: "Building Enterprise-Ready AI Agents: From Prototypes to Production",                  faculty: "Lutz Finger",             date: "8/19/26",  time: "12:00pm – 3:00pm" },
+    { title: "Building Enterprise-Ready AI Agents: From Prototypes to Production",                  faculty: "Lutz Finger",             date: "9/16/26",  time: "12:00pm – 3:00pm" },
+    { title: "Building Enterprise-Ready AI Agents: From Prototypes to Production",                  faculty: "Lutz Finger",             date: "10/14/26", time: "12:00pm – 3:00pm" },
+];
+
+const MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function monthAbbr(d) { return MONTH_NAMES[parseInt(d.split('/')[0], 10) - 1]; }
+function monthKey(d) {
+    const a = monthAbbr(d);
+    return ["Aug","Sep","Oct","Nov","Dec"].includes(a) ? "Aug+" : a;
+}
+
+function renderWorkshops(filter) {
+    const list = document.getElementById('workshop-list');
+    const header = list.querySelector('.workshop-row.header');
+    list.innerHTML = '';
+    list.appendChild(header);
+    const q = (filter.search || '').trim().toLowerCase();
+    const filtered = workshops.filter(w => {
+        const inM = filter.month === 'all' || monthKey(w.date) === filter.month;
+        const inS = !q || w.title.toLowerCase().includes(q) || w.faculty.toLowerCase().includes(q);
+        return inM && inS;
+    });
+    if (!filtered.length) {
+        const e = document.createElement('div');
+        e.className = 'workshop-empty';
+        e.textContent = 'No workshops match those filters. Try clearing the search or a different month.';
+        list.appendChild(e);
+    } else {
+        filtered.forEach(w => {
+            const row = document.createElement('div');
+            row.className = 'workshop-row';
+            row.innerHTML = `
+                <div class="workshop-title">${w.title}</div>
+                <div class="workshop-faculty">${w.faculty}</div>
+                <div class="workshop-date"><span class="month">${monthAbbr(w.date)}</span>${w.date}</div>
+                <div class="workshop-time">${w.time}</div>`;
+            list.appendChild(row);
+        });
+    }
+    document.getElementById('workshop-count').textContent = filtered.length;
+}
+
+// ── Boot ────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const href = a.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                window.scrollTo({ top: href === '#hero' ? 0 : target.offsetTop - 72, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Active nav
+    const navLinks    = document.querySelectorAll('.nav-link');
+    const floatLinks  = document.querySelectorAll('.floating-nav-link');
+    function updateActive() {
+        const sp = window.scrollY + 120;
+        document.querySelectorAll('section[id]').forEach(sec => {
+            if (sp >= sec.offsetTop && sp < sec.offsetTop + sec.offsetHeight) {
+                const id = sec.id;
+                navLinks.forEach(l  => l.classList.toggle('active',  l.dataset.section === id));
+                floatLinks.forEach(l => l.classList.toggle('active', l.dataset.section === id));
+            }
+        });
+    }
+    window.addEventListener('scroll', updateActive);
+
+    // Nav shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+    // Floating nav
+    const floatingNav    = document.getElementById('floating-nav');
+    const floatingToggle = document.getElementById('floating-nav-toggle');
+    const jumpToTop      = document.getElementById('jump-to-top');
+    window.addEventListener('scroll', () => {
+        const show = window.scrollY > window.innerHeight * 0.3;
+        floatingNav.classList.toggle('visible', show);
+        jumpToTop.classList.toggle('visible', show);
+        if (!show) floatingNav.classList.remove('expanded');
+    });
+    floatingToggle.addEventListener('click', e => { e.stopPropagation(); floatingNav.classList.toggle('expanded'); });
+    floatLinks.forEach(l => l.addEventListener('click', () => floatingNav.classList.remove('expanded')));
+    document.addEventListener('click', e => { if (!floatingNav.contains(e.target)) floatingNav.classList.remove('expanded'); });
+
+    // Workshop filtering
+    const searchInput = document.getElementById('workshop-search');
+    const monthBtns   = document.querySelectorAll('#month-filters .filter-btn');
+    let currentMonth  = 'all';
+    function applyFilters() { renderWorkshops({ month: currentMonth, search: searchInput.value }); }
+    searchInput.addEventListener('input', applyFilters);
+    monthBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            monthBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentMonth = btn.dataset.month;
+            applyFilters();
+        });
+    });
+    renderWorkshops({ month: 'all', search: '' });
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const t = btn.dataset.tab;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === t));
+        });
+    });
+
+    // Animated counters
+    function animateCount(el) {
+        const target = parseInt(el.dataset.count, 10);
+        if (!target || isNaN(target)) return;
+        const duration = 1400, start = performance.now();
+        function tick(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const e = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(e * target).toLocaleString();
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target.toLocaleString();
+        }
+        requestAnimationFrame(tick);
+    }
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+            if (en.isIntersecting && !en.target.dataset.counted) {
+                en.target.dataset.counted = '1';
+                animateCount(en.target);
+            }
+        });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('[data-count]').forEach(el => obs.observe(el));
+
+    // Parallax
+    window.addEventListener('scroll', () => {
+        const s = window.pageYOffset;
+        const bg = document.querySelector('.hero-background');
+        if (bg && s < window.innerHeight) bg.style.transform = `translateY(${s * 0.25}px)`;
+    });
+});
+</script>
+</body>
+</html>
